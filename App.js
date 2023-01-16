@@ -31,8 +31,24 @@ masterPlayButton.addEventListener('click', () => {
         masterPlayButton.classList.remove('fa-circle-pause');
     }
 });
+
 let namesArr = [];
 // Api data and playing from container
+// const musicPic = async () => {
+//     const response = await fetch("https://developer.spotify.com/dashboard/applications/ecdb803825684342b01ef53c953e19f7");
+//     const data2 = await response.json();
+//     // const list2 = data2.tracks;
+//     console.log(data2)
+//     const element = list2.map(item => {
+//         console.log(item);
+//         const htmlData2 = `
+//         <div class="songList">
+//             // <img>
+//         </div>`;
+//         return htmlData2;
+//     }).join('');
+// }
+
 const musicData = async () => {
     const response = await fetch(url);
     const data = await response.json();
@@ -67,7 +83,12 @@ const musicData = async () => {
     const searchResults = document.getElementById('search-results');
 
     search.addEventListener('click', () => {
-        searchBar.style.display = 'block';
+        if(searchBar.style.display == "none"){
+            searchBar.style.display = 'flex';
+        }else{
+            searchBar.style.display = "none";
+        }
+        
     });
 
     searchBar.addEventListener('input', () => {
@@ -207,7 +228,7 @@ function shuffleQueue() {
     // Clear the queueContainer
     queueContainer.innerHTML = '';
     // Append the elements to the queueContainer in the new randomized order
-    queueDiv.forEach((queuedSong, index) => {
+    queueDiv.forEach((queuedSong, index) => { 
         queueContainer.appendChild(queuedSong);
     });
 }
@@ -259,7 +280,7 @@ const playQueue = () => {
                 }
             });
         });
-    });
+    }); 
 };
 
 
@@ -341,7 +362,12 @@ const showPlaylist = () => {
 
 //  search playlist
 searchPlaylist.addEventListener('click', () => {
-    searchPlaylistInput.style.display = 'block';
+    if(searchPlaylistInput.style.display == 'none'){
+        searchPlaylistInput.style.display = 'block'
+    }else{
+        searchPlaylistInput.style.display = 'none';
+    }
+    
 
 });
 

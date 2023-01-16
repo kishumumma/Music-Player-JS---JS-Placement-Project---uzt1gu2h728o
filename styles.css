@@ -282,15 +282,15 @@ nav ul li:hover {
 }
 
 #playlistDiv {
-    width: 25em;
-    background: rgba(96, 171, 229, 0.438);
+    width: 20em;
+    background: rgba(134, 134, 202, 0.438);
     color: white;
     position: absolute;
     top: 5em;
-    z-index: 1;
-    height: 30em;
+    z-index: 2;
+    height: 25em;
     right: 44px;
-    margin-top: 20px;
+    margin-top: 100px;
     padding: 20px;
     border-radius: 25px;
     display: none;
